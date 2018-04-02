@@ -1,0 +1,21 @@
+﻿@using MoviesCRUD_MVC.Models
+@model MovieActorCombo
+@{
+    ViewBag.Title = "AddActorToMovie";
+}
+
+@using (Html.BeginForm("AddActorToMovie", "Movie", FormMethod.Post))
+{
+<div class="form-horizontal">
+    @Html.LabelFor(model => Model.ActorId)
+    <div class="form-group" id="focusedInput">
+        @Html.DropDownListFor(model => Model.ActorId, Model.ActorDropDown, "Select Actor")
+    </div>
+
+    <div class="form-horizontal">
+        @Html.HiddenFor(model => Model.MovieId)
+
+        <input type="submit" value="Add Actor" />
+    </div>
+</div>
+}

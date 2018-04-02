@@ -1,0 +1,45 @@
+﻿@using MoviesCRUD_MVC.Models
+@model MoviePO
+@{
+    ViewBag.Title = "Add Movie";
+}
+
+<h2>Add Movie</h2>
+
+@using (Html.BeginForm("AddMovie", "Movie", FormMethod.Post))
+{
+<div class="form-horizontal">
+    @Html.LabelFor(model => Model.Title)
+    <div class="form-group" id="focusedInput">
+        @Html.TextBoxFor(model => Model.Title, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => Model.Title, null, new { @class = "text-danger" })
+    </div>
+
+    @Html.LabelFor(model => Model.Rating)
+    <div class="form-group" id="focusedInput">
+        @Html.TextBoxFor(model => Model.Rating, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => Model.Rating, null, new { @class = "text-danger" })
+    </div>
+
+    @Html.LabelFor(model => Model.Runtime)
+    <div class="form-group" id="focusedInput">
+        @Html.TextBoxFor(model => Model.Runtime, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => Model.Runtime, null, new { @class = "text-danger" })
+    </div>
+
+    @Html.LabelFor(model => Model.Director)
+    <div class="form-group" id="focusedInput">
+        @Html.TextBoxFor(model => Model.Director, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => Model.Director, null, new { @class = "text-danger" })
+    </div>
+
+    @Html.LabelFor(model => Model.Synopsis)
+    <div class="form-group" id="focusedInput">
+        @Html.TextBoxFor(model => Model.Synopsis, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => Model.Synopsis, null, new { @class = "text-danger" })
+    </div>
+
+    <input type="submit" value="Add" />
+
+</div>
+}

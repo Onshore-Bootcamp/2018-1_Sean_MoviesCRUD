@@ -1,0 +1,36 @@
+﻿@using MoviesCRUD_MVC.Models
+@model ActorWithMoviesPO
+@{
+    ViewBag.Title = "Actor Details";
+}
+
+<h2>@Model.Actor.FullName</h2>
+
+@if (Model != null)
+{
+    <span><b>First Name: </b></span><span class="value">@Model.Actor.FirstName</span><br />
+    <span><b>Last Name: </b></span><span class="value">@Model.Actor.LastName</span><br />
+    <span><b>Birth Date: </b></span><span class="value">@Model.Actor.BirthDate</span><br />
+    <br />
+    <span><b>Bio: </b></span><span class="value">@Model.Actor.Bio</span><br />
+    <br />
+    <span><b>Trivia: </b></span><span class="value">@Model.Actor.Trivia</span><br />
+    <br />
+    <span><b>Quotes: </b></span><span class="value">@Model.Actor.Quotes</span><br />
+    <br />
+    <span><b>Titles</b></span><br />
+
+    foreach (MoviePO movie in Model.Movies)
+    {
+        <span class="value">@movie.Title</span><br />
+    }
+
+
+}
+else
+{
+    <p>Actor has yet to be added</p>
+}
+@Html.ActionLink("Update", "UpdateActor", new { Id = Model.Actor.ActorID }, new { @class = "btn btn-primary" })
+@Html.ActionLink("Delete", "DeleteActor", new { Id = Model.Actor.ActorID }, 
+    new { @onclick = "return confirm('Are you sure you wish to delete said actor?')", @class = "btn btn-danger" })

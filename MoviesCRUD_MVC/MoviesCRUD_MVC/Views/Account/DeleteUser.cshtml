@@ -1,0 +1,24 @@
+﻿@using MoviesCRUD_MVC.Models
+@model UserPO
+@{
+    ViewBag.Title = "Delete User";
+}
+
+<h2>Delete User</h2>
+
+<span><b>UserID</b></span><span class="value">@Model.UserID</span><br />
+<span><b>Username</b></span><span class="value">@Model.Username</span><br />
+<span><b>Password</b></span><span class="value">@Model.Password</span><br />
+<span><b>First Name</b></span><span class="value">@Model.FirstName</span><br />
+<span><b>Last Name</b></span><span class="value">@Model.LastName</span><br />
+<span><b>Email</b></span><span class="value">@Model.Email</span><br />
+<span><b>RoleID</b></span><span class="value">@Model.RoleID</span><br />
+
+@using (Html.BeginForm("DeleteUser", "Account", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        @Html.HiddenFor(model => Model.UserID)
+
+        <input type="submit" value="Delete" />
+    </div>
+}

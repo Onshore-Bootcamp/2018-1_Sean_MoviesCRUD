@@ -1,0 +1,51 @@
+﻿@using MoviesCRUD_MVC.Models
+@model ActorPO
+@{
+    ViewBag.Title = "Add Actor";
+}
+
+<h2>Add Actor</h2>
+
+@using (Html.BeginForm("AddActor", "Actor", FormMethod.Post))
+{
+<div class="form-horizontal">
+    @Html.LabelFor(model => Model.FirstName)
+    <div class="form-group" id="focusedInput">
+        @Html.TextBoxFor(model => Model.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => Model.FirstName, null, new { @class = "text-danger" })
+    </div>
+
+    @Html.LabelFor(model => Model.LastName)
+    <div class="form-group" id="focusedInput">
+        @Html.TextBoxFor(model => Model.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => Model.LastName, null, new { @class = "text-danger" })
+    </div>
+
+    @Html.LabelFor(model => Model.BirthDate)
+    <div class="form-group" id="focusedInput">
+        @Html.TextBoxFor(model => Model.BirthDate, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => Model.BirthDate, null, new { @class = "text-danger" })
+    </div>
+
+    @Html.LabelFor(model => Model.Bio)
+    <div class="form-group" id="focusedInput">
+        @Html.TextBoxFor(model => Model.Bio, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => Model.Bio, null, new { @class = "text-danger" })
+    </div>
+
+    @Html.LabelFor(model => Model.Trivia)
+    <div class="form-group" id="focusedInput">
+        @Html.TextBoxFor(model => Model.Trivia, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => Model.Trivia, null, new { @class = "text-danger" })
+    </div>
+
+    @Html.LabelFor(model => Model.Quotes)
+    <div class="form-group" id="focusedInput">
+        @Html.TextBoxFor(model => Model.Quotes, new { @class = "form-control" })
+        @Html.ValidationMessageFor(model => Model.Quotes, null, new { @class = "text-danger" })
+    </div>
+
+    <input type="submit" value="Add" />
+
+</div>
+}

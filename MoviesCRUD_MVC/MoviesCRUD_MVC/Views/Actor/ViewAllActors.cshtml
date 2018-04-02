@@ -1,0 +1,41 @@
+﻿@using MoviesCRUD_MVC.Models
+@model List<ActorPO>
+@{
+    ViewBag.Title = "View All Actors";
+}
+<div class="container body-content">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Glw0RRXGSDjsvrLnqSSdiOs_-gIqOSbTBWOj09fqzFfMfjRA-g" width="200" height="150"/>
+
+    <h2>View All Actors</h2>
+
+    <table class="table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Actor Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (ActorPO actor in Model)
+            {
+                <tr>
+                    <td>@actor.FirstName @actor.LastName</td>
+                    <td>
+                        @Html.ActionLink("Details", "ActorDetails", new { Id = actor.ActorID }, null)
+                        @Html.ActionLink("Update", "UpdateActor", new { Id = actor.ActorID }, null)
+                        @Html.ActionLink("Delete", "DeleteActor", new { Id = actor.ActorID },
+                                 new { @onclick = "return confirm('Are you certain you wish to be gone of such an atrocity of an actor?')" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">
+                    <button id="AddActorBTN" class="btn btn-success">Add</button>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>

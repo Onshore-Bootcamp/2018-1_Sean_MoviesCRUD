@@ -1,0 +1,57 @@
+﻿@using MoviesCRUD_MVC.Models
+@model List<MoviePO>
+@{
+    ViewBag.Title = "View All Movies";
+}
+<div class="container body-content">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Glw0RRXGSDjsvrLnqSSdiOs_-gIqOSbTBWOj09fqzFfMfjRA-g" width="200" height="150"/>
+
+<h2>View All Movies</h2>
+<h4>
+    Avg runtime of listed movies<b>
+        @if (Model.Count > 0)
+        {
+            @Model.Average(time => time.Runtime)
+        }
+        else
+        {
+
+        }
+    </b>minutes
+</h4>
+
+
+
+
+<table class="table-hover table-bordered">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (MoviePO movie in Model)
+        {
+            <tr>
+                <td>@movie.Title</td>
+                <td>
+                    @Html.ActionLink("Details", "MovieDetails", new { Id = movie.MovieID }, null)
+                    @Html.ActionLink("Update", "UpdateMovie", new { Id = movie.MovieID }, null)
+                    @Html.ActionLink("Delete", "DeleteMovie", new { Id = movie.MovieID },
+            new { onclick = "return confirm('Are you certain you wish to be gone of such an atrocity of a movie?')" })
+
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2">
+                <button id="AddMovieBTN" class="btn btn-success">Add</button>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+    </div>

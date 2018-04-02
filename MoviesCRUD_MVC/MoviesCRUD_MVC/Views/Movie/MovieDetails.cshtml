@@ -1,0 +1,69 @@
+﻿@using MoviesCRUD_MVC.Models
+@model MovieWithActorsPO
+
+@{
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Movie Details";
+}
+
+<table class="table-bordered">
+    <thead>
+        <tr>
+            <th>@Model.Movie.Title</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            <tr>
+                <td>
+                    @Model.Movie.Rating
+                    <span> | </span>
+                    @Model.Movie.Runtime minutes
+                    
+                </td>
+            </tr>
+
+            <tr>
+                <td>@Model.Movie.Synopsis</td>
+            </tr>
+            <tr>
+                <td><b>Director: </b><span>@Model.Movie.Director</span></td>
+            </tr>
+            <tr>
+                <td><b>Cast</b></td>
+            </tr>
+            foreach (ActorPO actor in Model.Actors)
+            {
+
+                <tr>
+                    <td>@actor.FirstName <span> @actor.LastName</span><span>@Html.ActionLink("Delete", "DeleteActorInMovie", "Movie",
+                                                                           new { MovieId = Model.Movie.MovieID, ActorId = actor.ActorID }, null)</span></td>
+                </tr>
+            }
+            <tr>
+                <td>
+                    @Html.ActionLink("Add Actor", "AddActorToMovie", "Movie", new { movieID = Model.Movie.MovieID}, null)
+                </td>
+            </tr>
+        }
+        else
+        {
+                <tr>
+                    <td>
+                        <p>Movie has yet to be added</p>
+                    </td>
+                </tr>
+        }
+    </tbody>
+</table>
+
+@Html.ActionLink("Update", "UpdateMovie", new { Id = Model.Movie.MovieID }, new { @class = "btn btn-primary" })
+@Html.ActionLink("Delete", "DeleteMovie", new { Id = Model.Movie.MovieID },
+    new { onclick = "return confirm('Are you sure you wish to delete this atrocity of a movie?')",
+        @class = "btn btn-danger" })
+
+

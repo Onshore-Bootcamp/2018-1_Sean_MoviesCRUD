@@ -1,0 +1,8 @@
+c:\users\motherbrain\source\repos\MoviesCRUD_MVC\Movies_BLL\bin\Debug\Movies_BLL.dll
+c:\users\motherbrain\source\repos\MoviesCRUD_MVC\Movies_BLL\bin\Debug\Movies_BLL.pdb
+c:\users\motherbrain\source\repos\MoviesCRUD_MVC\Movies_BLL\obj\Debug\Movies_BLL.csprojResolveAssemblyReference.cache
+c:\users\motherbrain\source\repos\MoviesCRUD_MVC\Movies_BLL\obj\Debug\Movies_BLL.csproj.CoreCompileInputs.cache
+c:\users\motherbrain\source\repos\MoviesCRUD_MVC\Movies_BLL\obj\Debug\Movies_BLL.dll
+c:\users\motherbrain\source\repos\MoviesCRUD_MVC\Movies_BLL\obj\Debug\Movies_BLL.pdb
+C:\Users\MotherBrain\source\repos\MoviesCRUD_MVC\Movies_BLL\bin\Debug\Movies_DAL.dll
+C:\Users\MotherBrain\source\repos\MoviesCRUD_MVC\Movies_BLL\bin\Debug\Movies_DAL.pdb

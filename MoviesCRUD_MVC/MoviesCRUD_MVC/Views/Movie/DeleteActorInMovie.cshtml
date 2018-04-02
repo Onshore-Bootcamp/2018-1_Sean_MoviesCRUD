@@ -1,0 +1,18 @@
+﻿@using MoviesCRUD_MVC.Models
+@model MovieActorCombo
+@{
+    ViewBag.Title = "Delete Actor";
+}
+
+<h2>Delete Actor</h2>
+
+<span><b>ActorID</b></span><span class="value">@Model.ActorId</span><br />
+
+@using (Html.BeginForm("DeleteActorInMovie", "Movie", FormMethod.Post))
+{
+    <div class="form-horizontal">
+        @Html.HiddenFor(model => Model.ActorId)
+
+        <input type="submit" value="Delete" />
+    </div>
+}

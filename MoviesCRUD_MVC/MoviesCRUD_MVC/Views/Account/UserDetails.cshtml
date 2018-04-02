@@ -1,0 +1,25 @@
+﻿@using MoviesCRUD_MVC.Models
+@model UserPO
+@{
+    ViewBag.Title = "User Details";
+}
+
+<h2>@Model.Username</h2>
+
+@if (Model != null)
+{
+    <span><b>Username: </b></span><span class="value">@Model.Username</span><br />
+    <span><b>Password: </b></span><span class="value">@Model.Password</span><br />
+    <span><b>First Name: </b></span><span class="value">@Model.FirstName</span><br />
+    <span><b>Last Name: </b></span><span class="value">@Model.LastName</span><br />
+    <span><b>Email: </b></span><span class="value">@Model.Email</span><br />
+    <span><b>RoleID: </b></span><span class="value">@Model.RoleID</span><br />
+
+}
+else
+{
+    
+}
+@Html.ActionLink("Update", "UpdateUser", "Account", new { Username = Model.Username }, new { @class = "btn btn-primary" })
+@Html.ActionLink("Delete", "DeleteUser", "Account", new { Username = Model.Username },
+    new { @onclick = "return confirm('Are you sure you wish to be gone with said user?')", @class = "btn btn-danger" })

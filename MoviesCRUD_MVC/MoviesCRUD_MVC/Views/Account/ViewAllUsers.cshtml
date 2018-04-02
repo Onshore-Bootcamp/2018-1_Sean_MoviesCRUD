@@ -1,0 +1,35 @@
+﻿@using MoviesCRUD_MVC.Models
+@model List<UserPO>
+@{
+    ViewBag.Title = "View All Users";
+}
+<div class="container body-content">
+
+    <img src="https://images.vexels.com/media/users/3/131714/isolated/preview/79c32723dbb8665c2108602d1dc80222-people-group-silhouette-by-vexels.png" width="150" height="150" />
+
+    <h2>View All Users</h2>
+
+    <table class="table-hover table-bordered">
+        <thead>
+            <tr>
+                <th>Usernames</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (UserPO user in Model)
+            {
+                <tr>
+                    <td>@user.Username</td>
+                    <td>
+                        @Html.ActionLink("Details", "UserDetails", new { Username = user.Username }, null)
+                        @Html.ActionLink("Update", "UpdateUser", new { Username = user.Username }, null)
+                        @Html.ActionLink("Delete", "DeleteUser", new { Id = user.UserID },
+                                      new { @onclick = "return confirm('Are you certain you wish to be gone with said user?')" })
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+</div>

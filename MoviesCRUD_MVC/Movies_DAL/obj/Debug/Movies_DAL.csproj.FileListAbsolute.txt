@@ -1,0 +1,6 @@
+c:\users\motherbrain\source\repos\MoviesCRUD_MVC\Movies_DAL\bin\Debug\Movies_DAL.dll
+c:\users\motherbrain\source\repos\MoviesCRUD_MVC\Movies_DAL\bin\Debug\Movies_DAL.pdb
+c:\users\motherbrain\source\repos\MoviesCRUD_MVC\Movies_DAL\obj\Debug\Movies_DAL.csprojResolveAssemblyReference.cache
+c:\users\motherbrain\source\repos\MoviesCRUD_MVC\Movies_DAL\obj\Debug\Movies_DAL.csproj.CoreCompileInputs.cache
+c:\users\motherbrain\source\repos\MoviesCRUD_MVC\Movies_DAL\obj\Debug\Movies_DAL.dll
+c:\users\motherbrain\source\repos\MoviesCRUD_MVC\Movies_DAL\obj\Debug\Movies_DAL.pdb
